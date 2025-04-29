@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario CUN Mejorado</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div class="marca-agua-scroll"></div>
+
+  <div class="galeria">
+    <h2>Escoge tu vibra</h2>
+    <div class="videos">
+      <a href="https://youtu.be/26jj4pNhxO0?si=KboTxcZTPupLxkbV" target="_blank">
+        <img src="https://i.ytimg.com/vi/26jj4pNhxO0/hqdefault.jpg?sqp=-oaymwEnCOADEI4CSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLClnpnDBMIDXObPasHNPV4w2rleIQ" alt="Video 1">
+      </a>
+      <a href="https://youtu.be/9wgDRAy9FbE?si=WqzvuHJBQKfru3B5" target="_blank">
+        <img src="https://i.ytimg.com/vi/9wgDRAy9FbE/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBPaedKEPMWzBfs72yZUa5Axudxrg" alt="Video 2">
+      </a>
+      <a href="https://youtu.be/m8QQR-wQA0I?si=yhDmv5Nx2guwb6Eq" target="_blank">
+        <img src="https://i.ytimg.com/vi/m8QQR-wQA0I/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYZSBlKGUwDw==&rs=AOn4CLDwGehb5kLsfGSSX4FapZAN3rQK5Q" alt="Video 3">
+      </a>
+    </div>
+  </div>
+  
+
+  <div class="contenedor">
+    <form id="miFormulario" action="#" method="POST">
+      
+      <fieldset>
+        <legend>Datos Personales</legend>
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="cedula">Cédula:</label>
+        <input type="number" name="cedula">
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferencias</legend>
+
+        <div class="grupo-preferencias">
+            <label for="fecha">Fecha y Hora:</label>
+            <input type="datetime-local" id="fecha" name="fecha">
+          
+            <div class="color-row">
+              <label for="color">Color Favorito:</label>
+              <input type="color" id="color" name="color">
+              <div id="color-preview"></div>
+            </div>
+          </div>
+          
+        <label for="ciudad">Ciudad:</label>
+        <select id="ciudad" name="ciudad">
+          <option value="Bogota">Bogotá</option>
+          <option value="Cali">Cali</option>
+          <option value="Medellin">Medellín</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Descripción</legend>
+
+        <textarea name="descripcion" placeholder="Escribe algo sobre ti..."></textarea>
+      </fieldset>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <div class="tabla-info">
+    <h3>Información de Ciudades</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Ciudad</th>
+          <th>Departamento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bogotá</td>
+          <td>Cundinamarca</td>
+        </tr>
+        <tr>
+          <td>Cali</td>
+          <td>Valle del Cauca</td>
+        </tr>
+        <tr>
+          <td>Medellín</td>
+          <td>Antioquia</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const formulario = document.getElementById('miFormulario');
+    formulario.addEventListener('submit', function(evento) {
+      evento.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      console.log('Nombre ingresado:', nombre);
+      alert('Formulario enviado. ¡Gracias ' + nombre + '!');
+    });
+  </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
